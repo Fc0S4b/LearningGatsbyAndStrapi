@@ -1,4 +1,5 @@
-# Gatsby-Strapi Portfolio Starter
+# Learning Gatsby with Strapi 
+# Gatsby-Strapi Portfolio Starter from John Smilga's course on [udemy](https://www.udemy.com/share/101XUA3@lQuvZEPgV4UfIDiE6l8oCJx3fA0QvlK88ta80Qwkz_XWLiK1zgrtZ0y9Mu2RsdjffA==/)
 
 ## Setup Notes
 
