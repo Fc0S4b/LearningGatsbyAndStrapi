@@ -4,6 +4,22 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
+
+// const strapiConfig = {
+//   apiURL: "htttps://localhost:1337/api", //process.env.STRAPI_API_URL,
+//   // accessToken: process.env.STRAPI_TOKEN,
+//   queryLimit: 1000, //Defaults to 100
+//   collectionTypes: [
+//     {
+//       name: `job`,
+//       endpoint: `jobs/?populate=desc`,
+//     },
+//   ],
+// }
+
 module.exports = {
   /* Your site config here */
 
@@ -19,5 +35,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Default to 100
+        collectionTypes: [`jobs`],
+        //If using single types place them in this array.
+        // singleTypes: [`about`],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+      },
+    },
   ],
 }
