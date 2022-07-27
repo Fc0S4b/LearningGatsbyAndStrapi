@@ -1,11 +1,29 @@
 import React from "react"
-
-const ProjectTemplate = ({ pageContext: { title } }) => {
+import { graphql } from "gatsby"
+import Seo from "../../components/Seo"
+const ProjectTemplate = ({ pageContext: { title }, data }) => {
   return (
-    <div>
-      <h4>{title}</h4>
-    </div>
+    <>
+      <main className="project-template-page">
+        <h2>{title}</h2>
+        <p>{data.strapiProjects.description}</p>
+      </main>
+    </>
   )
 }
+
+export const query = graphql`
+  query MyQuery($title: String) {
+    strapiProjects(title: { eq: $title }) {
+      description
+      title
+      image {
+        localFile {
+          publicURL
+        }
+      }
+    }
+  }
+`
 
 export default ProjectTemplate
