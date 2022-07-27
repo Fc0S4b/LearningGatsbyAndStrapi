@@ -593,7 +593,7 @@ Jobs
   font-weight: 400;
 }
 .job-info h4 {
-  text-transform: uppercase;
+  text-transform: uppercase; 
   color: var(--clr-grey-5);
   background: var(--clr-grey-9);
   display: inline-block;
