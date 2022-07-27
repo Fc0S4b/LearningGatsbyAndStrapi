@@ -22,8 +22,36 @@ const query = graphql`
 
 const Jobs = () => {
   const data = useStaticQuery(query)
-  console.log(data)
-  return <h2>jobs component</h2>
+  const {
+    allStrapiJobs: { nodes: jobs },
+  } = data
+  const { company, position, date, desc } = jobs[0]
+  return (
+    <section className="section jobs">
+      <Title title="experience" />
+      <div className="jobs-center">
+        {/* btn container */}
+        <div className="btn-container"></div>
+        {/* job info */}
+        <article className="job-info">
+          <h3>{position}</h3>
+          <h4>{company}</h4>
+          <p className="job-date">{date}</p>
+          {desc.map(item => {
+            return (
+              <div key={item.id} className="job-desc">
+                <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+                <p>{item.name}</p>
+              </div>
+            )
+          })}
+        </article>
+      </div>
+      <Link to="/about" className="btn center-btn">
+        more info
+      </Link>
+    </section>
+  )
 }
 
 export default Jobs
