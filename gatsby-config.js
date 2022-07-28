@@ -26,7 +26,7 @@ module.exports = {
     title: `WebDev Portfolio`,
     description: `Awesome WebDev Portfolio built with Gatsby and Strapi`,
     titleTemplate: `%s | WebDev Portfolio`,
-    // url:`https:// siteweb deployed`,
+    url: `http://localhost:8000`, //siteweb url deployed not localhost
     twitterUsername: `@john_doe`,
     image: `/mainImg.png`,
   },
